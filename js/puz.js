@@ -273,12 +273,12 @@ var ActiveXObject, parsedPuz, filecontents, PUZAPP = {};
             len = getShort(bytes, offset + 4);
             chksum = getShort(bytes, offset + 6);
             compChksum = cksum_region(bytes, offset + 8, len, 0);
-            if (chksum !== compChksum) {
-                throw {
-                    name: "BadExtraSectionChecksum",
-                    message: "Extra section " + sectName + " had computed checksum " + compChksum + ", versus given checksum " + chksum
-                };
-            }
+            //if (chksum !== compChksum) {
+                //throw {
+                //    name: "BadExtraSectionChecksum",
+                //    message: "Extra section " + sectName + " had computed checksum " + compChksum + ", versus given checksum " + chksum
+                //};
+            //}
             if (sectName === "GEXT") {
                 retval.gext = bytes.substring(offset + 8, offset + 8 + len);
             }
