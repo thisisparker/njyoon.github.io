@@ -227,7 +227,7 @@ function puzdata_to_nyt(puzdata,options)
     // only include the title if it's a Sunday
     if (puzdata.width >= 20)
     {
-        headers.push('"' + puzdata.title + '"');
+        headers.push('“' + puzdata.title + '”');
     }
     var address_arr = options.address.split('\n');
     headers = headers.concat(address_arr);
