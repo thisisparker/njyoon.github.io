@@ -227,7 +227,7 @@ function puzdata_to_nyt(puzdata,options)
     // only include the title if it's a Sunday
     if (puzdata.width >= 20)
     {
-        headers.push(puzdata.title);
+        headers.push('"' + puzdata.title + '"');
     }
     var address_arr = options.address.split('\n');
     headers = headers.concat(address_arr);
@@ -244,6 +244,10 @@ function puzdata_to_nyt(puzdata,options)
     if (options.coconstructor.length > 0) {
         var headers2 = [];
         var coconstructor_arr = options.coconstructor.split('\n');
+        if (puzdata.width >= 20)
+        {
+            headers2.push('\n')
+        }
         headers2 = headers2.concat(coconstructor_arr);
         headers2.push('');
         print_headers(doc,headers2,options.header_pt,margin/2 + DOC_WIDTH/2,margin);
